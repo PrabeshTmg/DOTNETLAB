@@ -1,27 +1,13 @@
-﻿using System;
+﻿int[] numbers = { 4, 8, 15, 16, 23, 42 };
+int total = 0;
+bool found = false;
 
-namespace MyNewApp
+foreach (int number in numbers)
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            string value = "Microsoft Learn";
-            string reversedValue = MyNewApp.Utilities.Utility.Reverse(value);
-            Console.WriteLine($"Secret message: {reversedValue}");
-        }
-    }
+    total += number;
+    if (number == 42) found = true;
 }
 
-namespace MyNewApp.Utilities
-{
-    class Utility
-    {
-        public static string Reverse(string message)
-        {
-            char[] letters = message.ToCharArray();
-            Array.Reverse(letters);
-            return new string(letters);
-        }
-    }
-}
+if (found) Console.WriteLine("Set contains 42");
+
+Console.WriteLine($"Total: {total}");
